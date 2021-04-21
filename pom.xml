@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>avs.manager</groupId>
-	<artifactId>AVS-publisher</artifactId>
+	<artifactId>AVS-subacriber</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>AVS-publisher</name>
-	<description>Demo project for AVS publishing</description>
+	<name>AVS-subacriber</name>
+	<description>Demo project for AVS Subscriber</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -41,32 +41,10 @@
 </dependency>
 <dependency>
   <groupId>org.apache.camel.springboot</groupId>
-  <artifactId>camel-spring-redis-starter</artifactId>
-<version>3.8.0</version>
-</dependency>
-<dependency>
-  <groupId>org.apache.camel.springboot</groupId>
   <artifactId>camel-metrics-starter</artifactId>
   <version>3.8.0</version>
   <!-- use the same version as your Camel core version -->
 </dependency>
-<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-<dependency>
-      <groupId>org.apache.camel.springboot</groupId>
-      <artifactId>camel-micrometer-starter</artifactId>
-      <version>3.8.0</version>
-</dependency>
-<dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-registry-prometheus</artifactId>
-</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>

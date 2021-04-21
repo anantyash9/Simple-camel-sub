@@ -37,19 +37,11 @@ public class MessageSubscriber extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // start from a timer
+    	
         from("{{google-pubsub-sub}}").routeId("subscriber")
-                // and call the bean
-//        .to("micrometer:timer:simple.timer?action=start")
-//        .transform(body().append(simple("${in.header.GooglePubsubConstants.MESSAGE_ID}")))
-//        .log(LoggingLevel.INFO, "${in.headers.CamelGooglePubsub.PublishTime}")
         
         .bean(processorBean,"checkSequence")
         .to("log:Throughput Logger?level=INFO&groupInterval=10000&groupDelay=60000&groupActiveOnly=false");
-//        .to("log:INFO?showBody=false&showHeaders=true");
-//        .to("stream:out");
-//        .to("micrometer:timer:simple.timer?action=stop")
-//        .to("micrometer:counter:MessageCount");
-
     }
 
 }
